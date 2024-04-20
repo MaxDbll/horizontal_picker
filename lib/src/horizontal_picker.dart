@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 part 'horizontal_picker_item.dart';
 part 'internal_item.dart';
 
-// #TODO Add documentation
-
 // Display an horziontal list of elements with different value to select one
 class HorizontalPicker<T> extends StatefulWidget {
   const HorizontalPicker(
