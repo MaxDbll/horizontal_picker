@@ -1,7 +1,11 @@
 name: horizontal_picker
 description: "An horizontal picker package."
 version: 1.0.0
-homepage:
+homepage: https://github.com/MaxDbll/horizontal_picker
+repository: https://github.com/MaxDbll/horizontal_picker
+screenshots:
+  - description: "Sample app screenshot with 3 exemples of the picker Widget."
+    url: assets/screenshot.jpg
 
 environment:
   sdk: '>=3.3.1 <4.0.0'
