@@ -10,14 +10,14 @@ class HorizontalPicker<T> extends StatefulWidget {
       required this.onSelected,
       required this.items,
       this.value,
-      this.optionSize = 64,
-      this.space = 14.0});
+      this.itemSize = 64,
+      this.itemSpacing = 14.0});
 
   final void Function(T) onSelected; // Callback when an option is selected
   final int? value; // Default selected value
   final List<HoriztontalPickerItem> items; // List of elements to display
-  final double optionSize; // Size of each element
-  final double space; // Space between each element
+  final double itemSize; // Size of each element
+  final double itemSpacing; // Space between each element
 
   @override
   State<HorizontalPicker<T>> createState() => _HorizontalPickerState<T>();
@@ -35,7 +35,7 @@ class _HorizontalPickerState<T> extends State<HorizontalPicker<T>> {
     selectedValue = widget.value;
 
     // Get the max height between the optionSize and selectedOptionSize
-    maxHeihgt = widget.optionSize;
+    maxHeihgt = widget.itemSize;
   }
 
   @override
@@ -43,13 +43,14 @@ class _HorizontalPickerState<T> extends State<HorizontalPicker<T>> {
     return SizedBox(
       height: maxHeihgt,
       child: ListView.separated(
-        separatorBuilder: (context, index) => SizedBox(width: widget.space),
+        separatorBuilder: (context, index) =>
+            SizedBox(width: widget.itemSpacing),
         shrinkWrap: true, // Use the minimum height
         scrollDirection: Axis.horizontal,
         itemCount: widget.items.length,
         itemBuilder: (context, index) {
           return _InternalItem(
-            size: widget.optionSize,
+            size: widget.itemSize,
             index: index,
             item: widget.items[index],
             selected:
