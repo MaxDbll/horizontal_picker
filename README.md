@@ -46,7 +46,7 @@ import 'package:horitzontal_picker/horitzontal_picker.dart';
 ## Usage and examples
 To use this package, just add the `HoritzontalPicker` widget to your widget tree.
 
-As a required parameter, you need to provide a list of items `HorizontalPickerItem` to be displayed in the picker. 
+As required parameters, you need to provide a list of items `HorizontalPickerItem` to be displayed in the picker and a `onSelection` callback executed when an item is selected. 
 
 
 
@@ -92,7 +92,7 @@ HorizontalPicker<int>(
 | items | List of items to be displayed in the picker | List<HoritzontalPickerItem<T>> | Yes |
 | onSelected | Callback function called when an item is selected | Function(T) | Yes |
 | value | Initial index of the selected item | int | No |
-| optionSize | Size of the item in the picker | double | No |
+| itemSize | Size of the item in the picker | double | No |
 | itemSpacing | Space between items | double | No |
 
 
