@@ -18,8 +18,8 @@ class _InternalItem<T> extends StatelessWidget {
   final void Function(T, int) onSelected; // Callback when the item is selected
   final GlobalKey<TooltipState> tooltipkey; // Key to show the tooltip
   final bool showTooltip; // Show tooltip when the item is selected
-  final int index;
-  final double size;
+  final int index; // Index of the item
+  final double size; // Size of the item
 
   @override
   Widget build(BuildContext context) {
