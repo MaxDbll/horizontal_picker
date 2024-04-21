@@ -20,7 +20,8 @@ and the Flutter guide for
 
 A Flutter package that provides an horizontal scrollable list of selectables items to pick an option.
 
-Add screenshot
+![screenshot](/assets/screenshot.jpg)
+
 
 ## Overview
 
