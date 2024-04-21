@@ -14,7 +14,7 @@ and the Flutter guide for
 # Horitzontal picker
 
 ![Static Badge](https://img.shields.io/badge/1.0.0-blue?label=pub)
-![Static Badge](https://img.shields.io/badge/>=%201.17.0-green?label=Flutter)
+![Static Badge](https://img.shields.io/badge/>=%203.0.0-green?label=Flutter)
 ![Static Badge](https://img.shields.io/badge/License-red?label=MIT)
 
 
