@@ -10,12 +10,14 @@ class HorizontalPicker<T> extends StatefulWidget {
       required this.onSelected,
       required this.items,
       this.value,
+      this.optionSize = 64,
       this.space = 14.0,
       this.showTooltip = false});
 
   final void Function(T) onSelected; // Callback when an option is selected
   final int? value; // Default selected value
   final List<HoriztontalPickerItem> items; // List of elements to display
+  final double optionSize; // Size of each element
   final double space; // Space between each element
   final bool showTooltip; // Show tooltip when an element is selected
 
@@ -26,6 +28,7 @@ class HorizontalPicker<T> extends StatefulWidget {
 class _HorizontalPickerState<T> extends State<HorizontalPicker<T>> {
   int? selectedValue = 0;
   List<GlobalKey<TooltipState>> tooltipKeys = [];
+  double maxHeihgt = 0;
 
   @override
   void initState() {
@@ -38,11 +41,15 @@ class _HorizontalPickerState<T> extends State<HorizontalPicker<T>> {
     for (var _ in widget.items) {
       tooltipKeys.add(GlobalKey<TooltipState>());
     }
+
+    // Get the max height between the optionSize and selectedOptionSize
+    maxHeihgt = widget.optionSize;
   }
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
+      height: maxHeihgt,
       child: ListView.separated(
         separatorBuilder: (context, index) => SizedBox(width: widget.space),
         shrinkWrap: true, // Use the minimum height
@@ -50,6 +57,7 @@ class _HorizontalPickerState<T> extends State<HorizontalPicker<T>> {
         itemCount: widget.items.length,
         itemBuilder: (context, index) {
           return _InternalItem(
+            size: widget.optionSize,
             index: index,
             item: widget.items[index],
             selected:

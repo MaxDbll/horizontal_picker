@@ -9,6 +9,7 @@ class _InternalItem<T> extends StatelessWidget {
       required this.onSelected,
       required this.tooltipkey,
       required this.showTooltip,
+      required this.size,
       required this.item,
       required this.index});
 
@@ -18,6 +19,7 @@ class _InternalItem<T> extends StatelessWidget {
   final GlobalKey<TooltipState> tooltipkey; // Key to show the tooltip
   final bool showTooltip; // Show tooltip when the item is selected
   final int index;
+  final double size;
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +52,17 @@ class _InternalItem<T> extends StatelessWidget {
         key: tooltipkey,
         message: '$value',
         preferBelow: false,
-        child: Opacity(opacity: selected ? 1 : 0.40, child: item),
+        child: Opacity(
+            opacity: selected ? 1 : 0.40,
+            child: Container(
+              width: size,
+              height: size,
+              decoration: BoxDecoration(
+                color: color,
+                shape: BoxShape.circle,
+              ),
+              child: Center(child: item.child),
+            )),
       ),
     );
   }
