@@ -27,7 +27,7 @@ class _InternalItem<T> extends StatelessWidget {
         item.color ?? Theme.of(context).colorScheme.surfaceVariant;
 
     return InkWell(
-      // customBorder: const CircleBorder(),
+      customBorder: const CircleBorder(),
       onTap: () async {
         // Call the callback function
         onSelected(value, index);

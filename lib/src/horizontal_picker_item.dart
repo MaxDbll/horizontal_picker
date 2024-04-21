@@ -6,12 +6,10 @@ class HoriztontalPickerItem<T> extends StatelessWidget {
       required this.value,
       required this.child,
       this.color,
-      this.optionSize = 64.0,
-      this.shape = BoxShape.circle});
+      this.optionSize = 64.0});
 
   final Widget child; // Commonly an Icon, Text or Image
   final T value; // The value of the item
-  final BoxShape shape; // BoxShape.circle or BoxShape.rectangle
   final double optionSize; // Size of the element
   final Color? color; // Color of the element
 
@@ -26,7 +24,7 @@ class HoriztontalPickerItem<T> extends StatelessWidget {
       // By default display the element as a circle
       decoration: BoxDecoration(
         color: itemColor,
-        shape: shape,
+        shape: BoxShape.circle,
       ),
       child: Center(
         child: child,
