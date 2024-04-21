@@ -11,15 +11,13 @@ class HorizontalPicker<T> extends StatefulWidget {
       required this.items,
       this.value,
       this.optionSize = 64,
-      this.space = 14.0,
-      this.showTooltip = false});
+      this.space = 14.0});
 
   final void Function(T) onSelected; // Callback when an option is selected
   final int? value; // Default selected value
   final List<HoriztontalPickerItem> items; // List of elements to display
   final double optionSize; // Size of each element
   final double space; // Space between each element
-  final bool showTooltip; // Show tooltip when an element is selected
 
   @override
   State<HorizontalPicker<T>> createState() => _HorizontalPickerState<T>();
@@ -27,7 +25,6 @@ class HorizontalPicker<T> extends StatefulWidget {
 
 class _HorizontalPickerState<T> extends State<HorizontalPicker<T>> {
   int? selectedValue = 0;
-  List<GlobalKey<TooltipState>> tooltipKeys = [];
   double maxHeihgt = 0;
 
   @override
@@ -36,11 +33,6 @@ class _HorizontalPickerState<T> extends State<HorizontalPicker<T>> {
 
     // Default selected value
     selectedValue = widget.value;
-
-    // Init tooltip keys
-    for (var _ in widget.items) {
-      tooltipKeys.add(GlobalKey<TooltipState>());
-    }
 
     // Get the max height between the optionSize and selectedOptionSize
     maxHeihgt = widget.optionSize;
@@ -69,8 +61,6 @@ class _HorizontalPickerState<T> extends State<HorizontalPicker<T>> {
                 widget.onSelected(value);
               });
             },
-            tooltipkey: tooltipKeys[index],
-            showTooltip: widget.showTooltip,
           );
         },
       ),
