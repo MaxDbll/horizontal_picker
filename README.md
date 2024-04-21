@@ -83,5 +83,27 @@ HorizontalPicker<int>(
 
 ```
 
+## Features
+
+### HoritzontalPicker
+
+| Option | Description | Type | Required |
+| --- | --- | --- | --- |
+| items | List of items to be displayed in the picker | List<HoritzontalPickerItem<T>> | Yes |
+| onSelected | Callback function called when an item is selected | Function(T) | Yes |
+| value | Initial index of the selected item | int | No |
+| optionSize | Size of the item in the picker | double | No |
+| itemSpacing | Space between items | double | No |
+
+
+### HoritzontalPickerItem
+| Option | Description | Type | Required |
+| --- | --- | --- | --- |
+| value | Value of the item | T | Yes |
+| child | Widget to be displayed | Widget | Yes |
+| color | Background color of the item | Color | No |
+
+
+
 ## Issues and feedback
 For reporting bugs, requesting features, or any other feedback, visit my [GitHub repository](https://github.com/MaxDbll/horizontal_picker).
