@@ -1,8 +1,7 @@
 part of 'horizontal_picker.dart';
 
-class HoriztontalPickerItem<T> extends StatelessWidget {
-  const HoriztontalPickerItem(
-      {super.key, required this.value, required this.child, this.color});
+class HorizontalPickerItem<T> extends StatelessWidget {
+  const HorizontalPickerItem({super.key, required this.value, required this.child, this.color});
 
   final Widget child; // Commonly an Icon, Text or Image
   final T value; // The value of the item

@@ -72,9 +72,9 @@ HorizontalPicker<int>(
         print('Selected value: $value');
     },
     // list of items to be displayed
-    items: textItems.map<HoriztontalPickerItem<int>>((e) {
-        // return a HoriztontalPickerItem with the value and the child widget displayed
-        return HoriztontalPickerItem<int>(
+    items: textItems.map<HorizontalPickerItem<int>>((e) {
+        // return a HorizontalPickerItem with the value and the child widget displayed
+        return HorizontalPickerItem<int>(
             value: textItems.indexOf(e) + 1,
             child: Text(e, style: const TextStyle(fontSize: 24)),
         );
